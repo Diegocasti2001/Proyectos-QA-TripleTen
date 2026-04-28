@@ -1,0 +1,64 @@
+
+
+## Clases de equivalencia (Parte 1)
+
+| Grupo de comprobaciones | Nombre de la clase | Límites | Datos de prueba dentro de la clase (contenido del campo) | Datos de prueba en los límites (contenido del campo) | Clarificación y optimización |
+| --- | --- | --- | --- | --- | --- |
+| Nombre | Nombre valido | 2-14 caracteres | Diego | Dentro de los limites | Solo letras, permite espacio o guion |
+|  | Menos de 2 caracteres | 1 caracter | D | 1 caracter | Error |
+|  | Mas de 14 caracteres | 15 caracteres | Diego Alejandroo | 15 caracteres | Error |
+|  | Contiene numeros | No aplica | Diego123 | - | No permitido |
+|  | Contiene simbolos | No aplica | Diego$ | - | No permitido |
+| Apellido | Apellido valido | 2-14 caracteres | Castillo | Dentro de los limites | Solo letras, permite espacio o guion |
+|  | Menos de 2 caracteres | 1 caracter | C | 1 caracter | Error |
+|  | Mas de 14 caracteres | 15 caracteres | CastilloValencia | 16 caracteres | Error |
+|  | Contiene numeros | No aplica | Castillo21 | - | No permitido |
+|  | Contiene simbolos | No aplica | Castillo$ | - | No permitido |
+
+## Clases de equivalencia (Parte 2)
+
+| Grupo de comprobaciones | Nombre de la clase | Límites | Datos de prueba dentro de la clase (contenido del campo) | Datos de prueba en los límites (contenido del campo) | Clarificación y optimización |
+| --- | --- | --- | --- | --- | --- |
+| Distancia entre las direcciones | distancia > 0 | Mayor que 0 | 5 km | 1 km | Distancia valida |
+|  |  |  |  |  |  |
+| Distancia entre las direcciones | distancia = 0 | 0 | 0 | 0 | No se calcula ruta |
+|  |  |  |  |  |  |
+| Distancia entre las direcciones | distancia negativa | Menor que 0 | - 5 km | - 1 km | No permitido |
+|  |  |  |  |  |  |
+| Hora de salida | Antes del rango | < 18:01 | 17:30 | 18:00 | No permitido |
+| Hora de salida | Limite inferior | 18:01 | 18:01 | 18:01 | Hora aceptada |
+| Hora de salida | Hora valida | 18:01–22:00 | 19:30 | 18:02 | Hora aceptada |
+| Hora de salida | Limite superior | 22:00 | 22:00 | 22:00 | Hora aceptada |
+| Hora de salida | Despues del rango | > 22:00 | 22:30 | 22:01 | No permitido |
+
+## Casos de prueba (Cálculo del tiempo y el costo del viaje)
+
+> **Módulo:** Cálculo del tiempo y el costo del viaje
+
+| ID del caso de prueba | Nombre del caso de prueba | Condición previa | Nº de pasos | Descripción de los pasos | Resultado esperado | Estado |
+| --- | --- | --- | --- | --- | --- | --- |
+| p-1 | El tiempo de conducción y el costo de un viaje en un automóvil compartido en Urban Routes con una hora de inicio de 18:01-22:00 | Abrir el servicio de Urban Routes | 1 | Introducir un destino en el campo “Desde” | El sistema calcula la ruta correctamente<br><br>Muestra el tiempo estimado del viaje<br><br>Muestra el costo del viaje<br><br>El cálculo del tiempo y costo se realiza correctamente para una hora dentro del rango permitido (18:01–22:00) | Aprobado |
+| p-1 | El tiempo de conducción y el costo de un viaje en un automóvil compartido en Urban Routes con una hora de inicio de 18:01-22:00 |  | 2 | Introducir dirección de destino en el campo Hasta |  |  |
+| p-1 | El tiempo de conducción y el costo de un viaje en un automóvil compartido en Urban Routes con una hora de inicio de 18:01-22:00 |  | 3 | Seleccionar opción Automóvil compartido |  |  |
+| p-1 | El tiempo de conducción y el costo de un viaje en un automóvil compartido en Urban Routes con una hora de inicio de 18:01-22:00 |  | 4 | Introducir hora de salida entre 18:01 y 22:00 |  |  |
+| p-1 | El tiempo de conducción y el costo de un viaje en un automóvil compartido en Urban Routes con una hora de inicio de 18:01-22:00 |  | 5 | Hacer clic en Calcular viaje |  |  |
+| p-2 | Calcular viaje con hora fuera del rango permitido | Abrir el servicio Urban Routes | 1 | Introducir dirección Desde | El sistema muestra un mensaje de error indicando que la hora no es válida<br><br>No se realiza el cálculo del tiempo ni del costo del viaje para horas fuera del rango permitido | Aprobado |
+| p-2 | Calcular viaje con hora fuera del rango permitido |  | 2 | Introducir dirección Hasta |  |  |
+| p-2 | Calcular viaje con hora fuera del rango permitido |  | 3 | Seleccionar Automóvil compartido |  |  |
+| p-2 | Calcular viaje con hora fuera del rango permitido |  | 4 | Introducir hora fuera del rango permitido |  |  |
+| p-2 | Calcular viaje con hora fuera del rango permitido |  | 5 | Calcular viaje |  |  |
+| p-3 | Calcular viaje con hora en el límite inferior | Abrir el servicio Urban Routes | 1 | Introducir la dirección de origen en el campo Desde | El sistema calcula la ruta correctamente<br><br>Muestra el tiempo estimado del viaje<br><br>Muestra el costo del viaje<br><br>El cálculo del tiempo y costo se realiza correctamente en el límite inferior (18:01) | Aprobado |
+| p-3 | Calcular viaje con hora en el límite inferior |  | 2 | Introducir la dirección de destino en el campo Hasta |  |  |
+| p-3 | Calcular viaje con hora en el límite inferior |  | 3 | Seleccionar la opción Automóvil compartido |  |  |
+| p-3 | Calcular viaje con hora en el límite inferior |  | 4 | Introducir la hora 18:01 |  |  |
+| p-3 | Calcular viaje con hora en el límite inferior |  | 5 | Hacer clic en Calcular viaje |  |  |
+| p-4 | Calcular viaje con distancia válida entre direcciones | Abrir el servicio Urban Routes | 1 | Introducir la dirección de origen en el campo Desde | El sistema calcula la ruta correctamente<br><br>Muestra el tiempo estimado del viaje<br><br>Muestra el costo del viaje<br><br>El cálculo del tiempo y costo se realiza correctamente para una hora dentro del rango permitido | Aprobado |
+| p-4 | Calcular viaje con distancia válida entre direcciones |  | 2 | Introducir la dirección de destino en el campo Hasta |  |  |
+| p-4 | Calcular viaje con distancia válida entre direcciones |  | 3 | Seleccionar automóvil compartido |  |  |
+| p-4 | Calcular viaje con distancia válida entre direcciones |  | 4 | Introducir una hora válida dentro del sistema |  |  |
+| p-4 | Calcular viaje con distancia válida entre direcciones |  | 5 | Calcular viaje |  |  |
+| p-5 | Intentar calcular viaje con la misma dirección | Abrir el servicio Urban Routes | 1 | Introducir la dirección de origen en el campo Desde | El sistema calcula la ruta correctamente<br><br>Muestra el tiempo estimado del viaje<br><br>Muestra el costo del viaje<br><br>El cálculo del tiempo y costo se realiza correctamente en el límite superior (22:00) | No Aprobado |
+| p-5 | Intentar calcular viaje con la misma dirección |  | 2 | Introducir la dirección de destino en el campo Hasta |  |  |
+| p-5 | Intentar calcular viaje con la misma dirección |  | 3 | Seleccionar automóvil compartido |  |  |
+| p-5 | Intentar calcular viaje con la misma dirección |  | 4 | Introducir una hora válida |  |  |
+| p-5 | Intentar calcular viaje con la misma dirección |  | 5 | Hacer clic en Calcular viaje |  |  |
