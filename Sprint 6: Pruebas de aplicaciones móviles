@@ -1,0 +1,29 @@
+# Lista de comprobación y resultados de la prueba — Urban.Lunch
+
+| # | Descripción | Estado | Enlace al informe de errores |
+|---:|---|---|---|
+| 1 | El mapa muestra los puntos de recogida y la ubicación del usuario o usuaria | PASSED |  |
+| 2 | Ningún punto está seleccionado por defecto | FAILED | https://diegocastillov2001.atlassian.net/browse/TRIP-48 |
+| 3 | Tocar un punto lo selecciona y se pone en negro | PASSED |  |
+| 4 | Tocar el mismo punto lo deselecciona | PASSED |  |
+| 5 | Seleccionar un punto cambia el nombre en el pie de página | PASSED |  |
+| 6 | La lista desplegable selecciona el punto en el mapa | PASSED |  |
+| 7 | El botón Siguiente está inactivo sin selección | PASSED |  |
+| 8 | Cada platillo muestra nombre, +, –, contador y flecha | PASSED |  |
+| 9 | Tocar el platillo abre la pantalla de detalles | PASSED |  |
+| 10 | El botón + agrega el platillo al pedido | PASSED |  |
+| 11 | El botón – elimina un platillo del pedido | PASSED |  |
+| 12 | El botón Siguiente está inactivo si no hay platillos | PASSED |  |
+| 13 | La pantalla muestra foto, descripción, ingredientes y restaurante | PASSED |  |
+| 14 | La pantalla muestra punto de recogida, lista, total y tiempo estimado | PASSED |  |
+| 15 | La lista solo muestra nombres y cantidades | PASSED |  |
+| 16 | El botón Pedir lleva a la pantalla de seguimiento | PASSED |  |
+| 17 | El mapa muestra restaurantes, rutas y tiempos | FAILED | https://diegocastillov2001.atlassian.net/browse/TRIP-49 |
+| 18 | Los elementos desaparecen cuando se entregan | PASSED |  |
+| 19 | La lista muestra platillos y restaurante | PASSED |  |
+| 20 | Aparece check verde cuando un platillo está listo | PASSED |  |
+| 21 | El temporizador llega a cero y cambia de pantalla | PASSED |  |
+| 22 | Muestra mapa, notificación y botón Recibí el pedido | PASSED |  |
+| 23 | El botón completa el pedido y lleva a feedback | PASSED |  |
+| 24 | Error si no se permite geolocalización | FAILED | https://diegocastillov2001.atlassian.net/browse/TRIP-50 |
+| 25 | Error si se intenta pedir sin platillos | FAILED | https://diegocastillov2001.atlassian.net/browse/TRIP-51 |
